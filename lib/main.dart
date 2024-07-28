@@ -24,108 +24,94 @@ class SimpleProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey[850],
-        title: Text(
-          "Ayman shokry",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-        ),
-        centerTitle: true,
-        elevation: 0,
-      ),
-      body: Container(
-        child: Container(
-          width: double.infinity,
-          color: Colors.grey[900],
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 40,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(100, 0, 0, 80),
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage(
-                            "assets/img/ayman.jpg",
-                          ),
-                          radius: 60,
-                        )
-                      ],
+    return SafeArea(
+      child: Scaffold(
+        
+        body: Container(
+
+              width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+
+
+              Container(
+                padding: EdgeInsets.symmetric(vertical:4, horizontal: 9),
+                width: 250,
+                decoration: BoxDecoration(
+                  color: Colors.purple[100],
+                  borderRadius: BorderRadius.circular(33),
+          
+                ),
+
+
+                child: TextField(
+                  
+                  // obscureText: true,
+                  keyboardType:TextInputType.emailAddress,
+                textInputAction: TextInputAction.newline,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Your Email :",hintStyle: TextStyle(color:Colors.black),
+
+
+                    prefixIcon: Icon(Icons.person,color: Colors.purple,),
+                
                     ),
-                  ),
+                
                 ),
-                Text(
-                  "Name:",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+
+           
+                  
+
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 20),
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 9),
+                width: 250,
+                decoration: BoxDecoration(
+                  color: Colors.purple[100], 
+                  borderRadius: BorderRadius.circular(33),
+          
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  " Ayman shokry",
-                  style: TextStyle(color: Colors.amberAccent, fontSize: 25),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  "Campany:",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      " Great Pyramids of ",
-                      style: TextStyle(color: Colors.white, fontSize: 23),
+                child: TextField(
+                  obscureText: true,
+                textInputAction: TextInputAction.newline,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Password :",
+                      
+                    prefixIcon: Icon(Icons. lock, color:Colors.purple) ,                  
+                    suffixIcon: Icon(Icons.visibility, color:Colors.purple),
+                
                     ),
-                    Text(
-                      "  Android",
-                      style: TextStyle(color: Colors.amberAccent, fontSize: 23),
-                    ),
-                  ],
+                
                 ),
-                SizedBox(
-                  height: 23,
-                ),
-                Text(
-                  "3",
-                  style: TextStyle(
-                      color: Colors.amber,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.email,
-                      color: Colors.amber,
-                    ),
-                    SizedBox(
-                      width: 9,
-                    ),
-                    Text(
-                      "aymanshokryy20@gamil.com",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              ),
+               
+               ElevatedButton(
+   onPressed: (){},
+   style: ButtonStyle(
+     backgroundColor: MaterialStateProperty.all(Colors.purple),
+     padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 109, vertical: 12)),
+     shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(66))),
+  ),
+   child: Text("login", style: TextStyle(fontSize: 19, color: Colors.white),),
+),
+
+
+
+
+
+
+
+
+           
+            ],
           ),
         ),
+        
       ),
     );
   }
